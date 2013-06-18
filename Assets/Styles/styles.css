@@ -1,0 +1,154 @@
+/*
+	Responsive grid system
+
+	Author: Alex Shearcroft
+	Date: 18/06/2013
+	Version: 1.0
+
+	This is a responsive grid system that can be used for responsive websites which also includes a responsive navigation. 
+	The main styles are created for 320 and upwards. Where the grid layout changes widths for a column a media query is 
+	used and the main breakpoints are 480, 600 and 768.
+
+*/
+
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+body {
+	font-family: 'Verdana';
+	font-size: 16px;
+	margin: 0;
+}
+
+/* Grid Layout */
+
+.grid {
+	display: block;
+	letter-spacing: -0.375em;
+	margin: 0 auto;
+	max-width: 60em;
+	overflow: hidden;
+	padding: 2px;
+}
+
+.grid__layout {
+	display: inline-block;
+	letter-spacing: normal;
+	line-height: 40px;
+	min-height: 40px;
+	padding: 2px;
+	text-align: left;
+	width: 100%;
+}
+
+.grid__layout p {
+	background: steelblue;
+	color: white;
+	display: block;
+	margin: 0;
+	text-align: center;
+}
+
+.navigation__title {
+	display: inline-block;
+	font-size: 16px;
+	letter-spacing: normal;
+	width: 80%;
+}
+
+.js-nav-dropdown {
+	background: url("../Images/nav-icon.png") 0 0 no-repeat;
+	display: inline-block;
+	float: right;
+	height: 36px;
+	letter-spacing: normal;
+	margin-right: 2px;
+	margin-top: 8px;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	width: 45px;
+}
+
+.navigation__links {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0 4px;
+	text-align: right;
+}
+
+.navigation__links li a {
+	color: #000;
+	text-decoration: none;
+}
+
+@media all and (min-width: 480px) {
+
+	.grid__layout--one-half {
+		width: 50%;
+	}
+
+	.grid__layout--one-third {
+		width: 33.33333333%;
+	}
+
+	.grid__layout--one-quarter {
+		width: 50%;
+	}
+
+	.grid__layout--two-thirds {
+		width: 66.66666667%;
+	}
+
+	.grid__layout--one-sixth {
+		width: 33.33333333%;
+	}
+
+}
+
+@media all and (min-width: 600px) {
+
+	.grid__layout--one-quarter {
+		width: 25%;
+	}
+
+	.grid__layout--three-quarters {
+		width: 75%;
+	}
+
+	/* Navigation */
+
+	.navigation__title {
+		width: 50%;
+	}
+
+	.js-nav-dropdown {
+		display: none;
+	}
+
+	.navigation__links {
+		display: inline-block;
+		width: 50%;
+	}
+
+	.navigation__links li {
+		display: inline-block;
+		margin-left: 16px;
+	}
+
+	.navigation__links li:first-child {
+		margin-left: 0;
+	}
+}
+
+@media all and (min-width: 768px) {
+
+	.grid__layout--one-sixth {
+		width: 16.66666667%;
+	}
+
+}
